@@ -39,30 +39,3 @@ while ($row = mysqli_fetch_row($result)) {
 mysqli_free_result($result);
 mysqli_close($conn);
 
-/*
-// Prepared Statements to Stop Injection Attacks
-$dsn = 'mysql:dbname=student;host='.$ip;
-$username = 'student';
-$password = 'letmein';
-
-// Set up PDO
-$pdo = new \PDO($dsn, $username, $password);
-
-
-$query = "SELECT * FROM test WHERE col_string = ? AND col_number = ?";
-$parameters = [$_GET['col_string'], $_GET['col_number']];
-$statement = $pdo->prepare($query);
-try {
-    $statement->execute($parameters);
-} catch (\PDOException $e) {
-    print_r($e->getCode(). ': '.$e->getMessage());
-}
-
-$rows = $statement->fetchAll(\PDO::FETCH_ASSOC);
-
-print('Retrieved '.$statement->rowCount().' row(s)</br></br>');
-
-foreach ($rows as $row) {
-    printf('<li>%s, %s, %s, %s</li></br>', $row['ID'],$row['col_number'],$row['col_string'],$row['col_dttm']);
-}
-*/
